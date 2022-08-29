@@ -49,7 +49,7 @@ const NewsResult = () => {
                     <SideNav/>
                     <section className='flex justify-center'>
                         <div className="xl:max-w-screen-xl flex flex-col-reverse md:flex-row content-center">
-                            <div className="w-full flex flex-col gap-2 flex-1 justify-center md:pt-14 xl:pt-14 lg: pl-52 xl:pl-56 pr-6 pb-28">
+                            <div className="w-full flex flex-col gap-2 flex-1 justify-center md:pt-14 xl:pt-14 lg:pl-52 xl:pl-56 pr-6 pb-28">
                                 {news.length !== 0 ? (
                                     news?.entries?.map((item, index) => {
                                         return (

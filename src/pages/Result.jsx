@@ -40,27 +40,24 @@ const Result = () => {
         <>
             {!isLoading ? (
                 <div className='container flex justify-center pt-14 pb-20 xl:pt-16 xl:pb-28 dark:text-white'>
-                    <ul className='max-w-xs md:max-w-screen-sm lg:max-w-screen-md lg:pt-6 xl:max-w-5xl flex flex-col gap-1 md:gap-4'>
+                    <ul className='max-w-xs overflow-hidden md:max-w-screen-sm lg:max-w-screen-md lg:pt-6 xl:max-w-5xl flex flex-col gap-1 md:gap-4'>
                         {searchResult.map((result, index) => {
                             return (
-                                <li key={index} className="flex flex-col">
+                                <li key={index} className="flex flex-col overflow-hidden border-b-2 border-gray-400">
                                     <>
                                         <h6 className='text-xs md:text-sm'>{result.link}</h6>
                                         <a href={result.link} className="text-lg md:text-2xl hover:underline underline-offset-2 visited:text-purple-600 font-medium" target="_blank" rel="noopener noreferrer">{result.title}</a>
                                         <p className='truncate'>{result.description}</p>
                                     </>
-                                    <ul className='pl-6 md:p-4 p-2 flex flex-col md:gap-2'>
+                                    <ul className='pl-6 md:p-2 p-2 flex flex-col md:gap-2'>
                                         {result?.additional_links?.map((addLink, index) => {
                                             return (
                                                 <div key={index}>
-                                                    {addLink.text.length < 20 && 
+                                                    {(addLink.text.length < 20 && addLink.text !== 'Translate this page') && 
                                                         <>
                                                             <li>
                                                                 <a href={addLink.href} target="_blank" rel="noopener noreferrer" className='hover:underline underline-offset-2 visited:text-purple-600 text-lg md:text-xl font-medium'>{addLink.text}</a>
-                                                            </li>
-                                                            
-                                                            <a href={addLink.href} className="text-xs md:text-md">{addLink.href}</a>
-                                                                
+                                                            </li> 
                                                         </>
                                                     }
                                                 </div>

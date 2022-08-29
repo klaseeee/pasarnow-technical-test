@@ -43,7 +43,7 @@ const NavBar = () => {
         <Router>
             <nav className={`z-20 fixed flex justify-between items-center w-full p-2 pr-4 pl-4 dark:bg-slate-800 bg-white dark:text-white`}>
               <button onClick={() => changeTheme()}>
-                {theme === 'light' ? <BsSun className='text-md md:text-lg'/> : <MdOutlineDarkMode className='text-md md:text-lg'/>}
+                {theme === 'light' ? <BsSun className='text-md text-xl md:text-lg lg:text-lg xl:text-lg'/> : <MdOutlineDarkMode className='text-md text-xl md:text-lg lg:text-lg xl:text-lg'/>}
               </button>
 
               <ul className="hidden md:flex justify-end gap-2 pt-2">
@@ -56,14 +56,14 @@ const NavBar = () => {
               </ul>
 
               <button className='md:hidden lg:hidden xl:hidden' onClick={() => handleToggle()}>
-                <HiMenuAlt4 className='text-lg'/>
+                <HiMenuAlt4 className='text-2xl'/>
               </button>
 
-              {toggle && <ul className='absolute right-1 top-10 w-32 h-14 rounded bg-zinc-300 shadow-sm dark:bg-slate-400 flex justify-center items-center flex-col'>
-                <li className="text-center text-base w-full hover:bg-green-500 hover:dark:bg-slate-500">
+              {toggle && <ul className='absolute right-1 top-10 w-32 rounded bg-zinc-300 shadow-sm dark:bg-slate-400 flex justify-center items-center flex-col'>
+                <li className="text-center text-base w-full hover:bg-green-500 hover:dark:bg-slate-500 p-2">
                   <Link to="/search/image" className='capitalize'>image</Link>
                 </li>
-                <li className="text-center text-base w-full hover:bg-green-500 hover:dark:bg-slate-500">
+                <li className="text-center text-base w-full hover:bg-green-500 hover:dark:bg-slate-500 p-2">
                   <Link to="/search/news" className='capitalize'>news</Link>
                 </li>
               </ul>}
