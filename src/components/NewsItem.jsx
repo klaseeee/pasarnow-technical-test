@@ -5,7 +5,15 @@ import Moment from "react-moment";
 
 const NewsCard = (props) => {
   const [copy, setCopy] = useState({ value: "", copied: false });
-  const [savedNews, setSavedNews] = useState([]);
+  const [savedNews, setSavedNews] = useState([
+    {
+      title: "",
+      href: "",
+      source: "",
+      timestamps: "",
+      saved: false,
+    },
+  ]);
 
   setTimeout(() => {
     setCopy({ copied: false });
@@ -15,13 +23,15 @@ const NewsCard = (props) => {
     // let data = { title, href, source, timestamps, saved };
 
     // setSavedNews(prevNews => [{...prevNews, [data.title]: data}])
-    setSavedNews([...savedNews], {
-      title: title,
-      href,
-      source,
-      timestamps,
-      saved,
-    });
+    setSavedNews([
+      {
+        title,
+        href,
+        source,
+        timestamps,
+        saved,
+      },
+    ]);
 
     console.log(savedNews);
   };
@@ -74,7 +84,7 @@ const NewsCard = (props) => {
                 )
               }
             >
-              {savedNews.saved ? <BsFillBookmarkFill /> : <BsBookmark />}
+              {savedNews[0].saved ? <BsFillBookmarkFill /> : <BsBookmark />}
             </button>
 
             <CopyToClipboard

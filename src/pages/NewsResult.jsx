@@ -34,7 +34,7 @@ const NewsResult = () => {
       setNews(response.data);
 
       setIsLoading(false);
-      console.log(news);
+      // console.log(news);
     } catch (err) {
       console.log(err);
     }

@@ -1,6 +1,6 @@
 const ResultItem = ({ result }) => {
   return (
-    <li className="flex flex-col overflow-hidden border-b-2 border-gray-100 dark:border-b-2 dark:border-slate-500 pb-4">
+    <li className="flex flex-col overflow-hidden border-b-2 border-gray-100 dark:border-b-2 dark:border-slate-700 pb-4">
       <h6 className="text-xs md:text-sm">{result?.cite?.domain}</h6>
       <a
         href={result.link}
