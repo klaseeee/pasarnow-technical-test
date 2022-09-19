@@ -38,7 +38,7 @@ const NavBar = () => {
 
   return (
     <nav
-      className={`z-20 fixed flex justify-between items-center w-full p-2 pr-4 pl-4 dark:bg-slate-800 bg-white dark:text-white`}
+      className={`z-20 fixed flex justify-between items-center w-full p-2 pt-4 xl:p-2 pr-4 pl-4 dark:bg-slate-800 bg-white dark:text-white`}
     >
       <button onClick={() => changeTheme()}>
         {theme === "light" ? (
@@ -76,10 +76,16 @@ const NavBar = () => {
 
       {toggle && (
         <ul className="absolute right-1 top-10 w-32 rounded bg-zinc-300 shadow-sm dark:bg-slate-400 flex justify-center items-center flex-col">
-          <li className="text-center text-base w-full hover:bg-green-500 hover:dark:bg-slate-500 p-2">
+          <li
+            className="text-center text-base w-full hover:bg-green-500 hover:dark:bg-slate-500 p-2 capitalize"
+            onClick={() => linkHref("image")}
+          >
             image
           </li>
-          <li className="text-center text-base w-full hover:bg-green-500 hover:dark:bg-slate-500 p-2">
+          <li
+            className="text-center text-base w-full hover:bg-green-500 hover:dark:bg-slate-500 p-2 capitalize"
+            onClick={() => linkHref("news")}
+          >
             news
           </li>
         </ul>
